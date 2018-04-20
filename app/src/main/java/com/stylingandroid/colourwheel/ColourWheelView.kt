@@ -12,7 +12,7 @@ class ColourWheelView @JvmOverloads constructor(
 ) : AppCompatImageView(context, attributeSet, defStyleAttr), BitmapGenerator.BitmapObserver {
 
     private val bitmapGenerator: BitmapGenerator by lazy(LazyThreadSafetyMode.NONE) {
-        BitmapGenerator(Bitmap.Config.ARGB_8888, this)
+        BitmapGenerator(context, Bitmap.Config.ARGB_8888, this)
     }
 
     var brightness: Byte by bitmapGenerator
@@ -38,3 +38,4 @@ class ColourWheelView @JvmOverloads constructor(
         bitmapGenerator.stop()
     }
 }
+
