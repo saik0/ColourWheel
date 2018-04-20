@@ -8,8 +8,8 @@
 
   <com.stylingandroid.colourwheel.ColourWheelView
     android:id="@+id/colourWheel"
-    android:layout_width="256dp"
-    android:layout_height="256dp"
+    android:layout_width="896px"
+    android:layout_height="896px"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
