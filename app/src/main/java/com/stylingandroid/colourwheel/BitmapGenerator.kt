@@ -72,22 +72,20 @@ class BitmapGenerator(
     }
 
     private fun generate() {
-        val start = SystemClock.elapsedRealtime()
-
         if (size.hasDimensions && generateProcess?.isCompleted != false) {
             generateProcess = launch(CommonPool) {
                 rsCreation.await()
                 generated.value.also {
+                    val start = SystemClock.elapsedRealtime()
                     draw(it)
+                    val elapsed = SystemClock.elapsedRealtime() - start
                     launch(UI) {
                         observer.bitmapChanged(it)
+                        Log.d("BitmapGenerator", "draw elapsed: $elapsed")
                     }
                 }
             }
         }
-
-        val time = SystemClock.elapsedRealtime() - start
-        Log.d("BitmapGenerator", "generate time: $time")
     }
 
     private fun generateBlocking() {
