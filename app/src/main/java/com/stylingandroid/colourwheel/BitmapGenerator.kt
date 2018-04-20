@@ -3,8 +3,8 @@ package com.stylingandroid.colourwheel
 import android.content.Context
 import android.graphics.Bitmap
 import android.os.SystemClock
-import android.support.v8.renderscript.Allocation
-import android.support.v8.renderscript.RenderScript
+import android.renderscript.Allocation
+import android.renderscript.RenderScript
 import android.util.Log
 import kotlinx.coroutines.experimental.*
 import kotlinx.coroutines.experimental.android.UI

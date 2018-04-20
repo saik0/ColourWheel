@@ -18,7 +18,7 @@ void colourWheel(rs_script script, rs_allocation allocation, float brightness_va
     rsForEach(script, allocation, allocation);
 }
 
-uchar4 RS_KERNEL root(uchar4 in, int32_t x, int32_t y) {
+void root(const uchar4 *v_in, uchar4 *v_out, const void *usrData, uint32_t x, uint32_t y) {
     uchar4 out;
     float xOffset = x - centreX;
     float yOffset = y - centreY;
@@ -33,5 +33,5 @@ uchar4 RS_KERNEL root(uchar4 in, int32_t x, int32_t y) {
     } else {
         out = transparent;
     }
-    return out;
+    *v_out = out;
 }
